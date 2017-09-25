@@ -195,7 +195,7 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 149790, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
   m_PrefabInternal: {fileID: 846411071}
---- !u!114 &202908534
+--- !u!114 &202908535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -203,11 +203,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 202908527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bce9961440e8d645a27662859ffefd2, type: 3}
+  m_Script: {fileID: 11500000, guid: 24458ba0253d72a4b9cec05434c55cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnpoint: {fileID: 1087559160}
-  m_trap: {fileID: 903842038}
 --- !u!1 &219567836
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,8 +650,8 @@ GameObject:
   - component: {fileID: 903842039}
   - component: {fileID: 903842038}
   m_Layer: 0
-  m_Name: Cylinder
-  m_TagString: Untagged
+  m_Name: PushTrap
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -724,7 +723,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 735d9efa05d5ec84295925da57b0d5ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1360,3 +1359,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0718094bc2f14458645780ed213695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_trapgameobjects:
+  - {fileID: 903842036}
