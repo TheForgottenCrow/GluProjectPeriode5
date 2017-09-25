@@ -18,12 +18,15 @@ public class Player : MonoBehaviour {
     {
         m_JumpTime += Time.deltaTime;
 
-        while (m_JumpTime < 1.5f)
+        
+
+        if (m_JumpTime < 1.5f)
         {
             gameObject.transform.position += Vector3.up * m_JumpStrength * Time.deltaTime;
         }
 
-        if (Input.anyKey)
+        //Temp input
+        if (Input.GetKey(KeyCode.Space))
         {
             m_JumpTime = 0f;
             
