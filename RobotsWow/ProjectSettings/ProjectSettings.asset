@@ -588,9 +588,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 9887f1a4-6f8f-455f-952b-f198a7ec9c6a
-  projectName: RobotsWow
-  organizationId: theforgottencrow
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
