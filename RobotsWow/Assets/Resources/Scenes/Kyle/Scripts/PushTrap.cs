@@ -10,10 +10,15 @@ public interface ITrap
 
 public class PushTrap : MonoBehaviour, ITrap
 {
+    [SerializeField]
+    private PlayerController m_player;
+    
     Animator m_animator;
 
     void Start()
     {
+        m_player.TrapHasHitEvent += Reset;
+
         m_animator = GetComponent<Animator>();
 
         m_animator.SetInteger("State", 0);

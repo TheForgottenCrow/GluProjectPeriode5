@@ -10,12 +10,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     Transform m_spawnpoint;
-    
+
     void Start()
     {
         Reset();
 
-        TrapHasHitEvent += Reset;
+        //TrapHasHitEvent += Reset;
     }
 
     void Reset()
@@ -25,14 +25,15 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (TrapHasHitEvent != null)
+        if (other.tag == "Trap")
         {
-            if (other.tag == "Trap")
-            {
-                Debug.Log("IK BEN GERAAKT!!!");
+            Debug.Log("IK BEN GERAAKT!!!");
 
+            if (TrapHasHitEvent != null)
+            {
                 TrapHasHitEvent();
             }
+            Reset();
         }
     }
 }
