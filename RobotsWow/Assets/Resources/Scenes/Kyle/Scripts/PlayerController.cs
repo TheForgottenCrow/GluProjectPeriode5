@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         Reset();
 
-        //TrapHasHitEvent += Reset;
+        TrapHasHitEvent += Reset;
     }
 
     void Reset()
