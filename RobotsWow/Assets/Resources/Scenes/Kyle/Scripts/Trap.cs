@@ -8,7 +8,11 @@ public interface ITrap
     void Reset();
 }
 
+<<<<<<< HEAD
 public class Trap : MonoBehaviour, ITrap
+=======
+public class Trap : MonoBehaviour
+>>>>>>> DeveloperGeneral
 {
     [SerializeField]
     float m_trapendcounter;
@@ -24,7 +28,11 @@ public class Trap : MonoBehaviour, ITrap
 
     [SerializeField]
     private PlayerController m_player;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> DeveloperGeneral
     Animator m_animator;
 
     void Start()
@@ -40,6 +48,7 @@ public class Trap : MonoBehaviour, ITrap
 
     void Update()
     {
+<<<<<<< HEAD
         m_trapresettimer = m_trapresettimer + Time.deltaTime;
         m_deactivationtimer = m_deactivationtimer + Time.deltaTime;
 
@@ -47,11 +56,22 @@ public class Trap : MonoBehaviour, ITrap
         {
             if (Input.GetKeyDown(m_trapactivationkey))
             {
+=======
+        //m_trapresettimer = m_trapresettimer + Time.deltaTime;
+        m_deactivationtimer = m_deactivationtimer + Time.deltaTime;
+
+        if (m_deactivationtimer > m_deactivatetraptimer)
+        {
+            if (Input.GetKeyDown(m_trapactivationkey))
+            {
+                //timer werkt
+>>>>>>> DeveloperGeneral
                 Activate();
                 m_deactivationtimer = 0;
                 m_trapisactive = true;
             }
         }
+<<<<<<< HEAD
 
         if (m_trapresettimer > m_trapendcounter && m_trapisactive == true)
         {
@@ -59,10 +79,27 @@ public class Trap : MonoBehaviour, ITrap
             m_trapresettimer = 0;
             Debug.Log("Meow");
         }
+=======
+        /*
+        if (m_trapresettimer > m_trapendcounter && m_trapisactive == true)
+        {
+            Debug.Log(m_trapresettimer);
+            Reset();
+            m_trapresettimer = 0;
+            m_trapisactive = false;
+        }
+        */
+        //if(m_trapisactive == true)
+        //{
+        //    Reset();
+        //    m_trapisactive = false;
+        //}
+>>>>>>> DeveloperGeneral
     }
 
     public void Activate()
     {
+<<<<<<< HEAD
         m_animator.SetInteger("State", 1);
     }
 
@@ -72,3 +109,22 @@ public class Trap : MonoBehaviour, ITrap
     }
 
 }
+=======
+        //Debug.Log("Time For Change");
+        m_animator.SetInteger("State", 1);
+    }
+
+    public void Idle()
+    {
+        //Debug.Log("Naaah I will just go back");
+        m_animator.SetInteger("State", 0);
+    }
+
+    public void Reset()
+    {
+        //Debug.Log("Naaah I will just go back");
+        m_animator.SetInteger("State", 2);
+    }
+}
+
+>>>>>>> DeveloperGeneral

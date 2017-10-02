@@ -19,13 +19,21 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
+<<<<<<< HEAD
         value: {x: -0.803, y: 1.65, z: 0.312962}
+=======
+        value: {x: -0.785, y: 1.78, z: 0.312962}
+>>>>>>> DeveloperGeneral
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
         time: 0.8333333
+<<<<<<< HEAD
         value: {x: -0.803, y: 1.65, z: -0.0866}
+=======
+        value: {x: -0.785, y: 1.78, z: -0.0885}
+>>>>>>> DeveloperGeneral
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -45,7 +53,11 @@ AnimationClip:
         tangentMode: 0
       - serializedVersion: 2
         time: 0.8333333
+<<<<<<< HEAD
         value: {x: 0.1822348, y: 0.43690154, z: 1.598749}
+=======
+        value: {x: 0.1822348, y: 0.4387654, z: 1.598749}
+>>>>>>> DeveloperGeneral
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -82,7 +94,11 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
+<<<<<<< HEAD
     m_StopTime: 0.8333333
+=======
+    m_StopTime: 0.85
+>>>>>>> DeveloperGeneral
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -103,13 +119,21 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
+<<<<<<< HEAD
         value: -0.803
+=======
+        value: -0.785
+>>>>>>> DeveloperGeneral
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
         time: 0.8333333
+<<<<<<< HEAD
         value: -0.803
+=======
+        value: -0.785
+>>>>>>> DeveloperGeneral
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -131,7 +155,11 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.8333333
+<<<<<<< HEAD
         value: 1.65
+=======
+        value: 1.78
+>>>>>>> DeveloperGeneral
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -153,7 +181,11 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.8333333
+<<<<<<< HEAD
         value: -0.0866
+=======
+        value: -0.0885
+>>>>>>> DeveloperGeneral
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -197,7 +229,11 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.8333333
+<<<<<<< HEAD
         value: 0.43690154
+=======
+        value: 0.4387654
+>>>>>>> DeveloperGeneral
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -234,4 +270,11 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.85
+    functionName: Reset
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

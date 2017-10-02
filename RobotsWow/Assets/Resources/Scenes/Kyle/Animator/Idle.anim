@@ -19,7 +19,11 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
+<<<<<<< HEAD
         value: {x: -0.803, y: 1.65, z: 0.312962}
+=======
+        value: {x: -0.785, y: 1.78, z: 0.312962}
+>>>>>>> DeveloperGeneral
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -71,7 +75,11 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
+<<<<<<< HEAD
         value: -0.803
+=======
+        value: -0.785
+>>>>>>> DeveloperGeneral
         inSlope: 0
         outSlope: 0
         tangentMode: 136
