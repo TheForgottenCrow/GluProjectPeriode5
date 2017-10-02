@@ -663,7 +663,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 903842036}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.242, y: 1.78, z: 0.31296197}
+  m_LocalPosition: {x: -0.785, y: 1.78, z: 0.312962}
   m_LocalScale: {x: 0.1822348, y: 0.037366513, z: 1.598749}
   m_Children: []
   m_Father: {fileID: 250595975}
@@ -677,9 +677,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 903842036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35c1f1f98f014aa41bb8253004d89d54, type: 3}
+  m_Script: {fileID: 11500000, guid: 3921b442adb9f0340b7f9b5641840cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_trapendcounter: 0.4
+  m_deactivatetraptimer: 1
+  m_trapactivationkey: 111
   m_player: {fileID: 202908535}
 --- !u!136 &903842039
 CapsuleCollider:
