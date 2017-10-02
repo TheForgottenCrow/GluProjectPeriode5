@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Player1
   - Trap
+=======
+  - DmgObject
+>>>>>>> JeftaBrink
   layers:
   - Default
   - TransparentFX
