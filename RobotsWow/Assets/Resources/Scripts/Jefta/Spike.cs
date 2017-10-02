@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public class Spike : ITrap {
 
     [SerializeField]
@@ -76,3 +77,4 @@ public class Spike : ITrap {
         return (true);
     }
 }
+*/

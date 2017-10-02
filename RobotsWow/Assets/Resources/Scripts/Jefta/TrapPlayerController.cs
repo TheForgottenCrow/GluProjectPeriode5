@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public class TrapPlayerController : MonoBehaviour {
 
     [SerializeField]
@@ -36,3 +37,4 @@ public class TrapPlayerController : MonoBehaviour {
 
     }
 }
+*/

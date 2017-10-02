@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapManager : MonoBehaviour {
+/*
+public class JeftaTrapManager : MonoBehaviour {
 
     [SerializeField]
     public List<ITrap> m_TrapList;
@@ -39,7 +40,6 @@ public class TrapManager : MonoBehaviour {
         }
 
         return (giveBack);
-
-
     }
 }
+*/
