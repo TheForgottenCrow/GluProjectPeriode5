@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:RobotsWow/Assets/Resources/Scenes/Kyle/Animator.meta
 guid: 0d181b8b9c244ea479655b787a385068
 folderAsset: yes
 timeCreated: 1506330827
+=======
+guid: 1c55517bbf5f8344caaac02f7cfcf32c
+folderAsset: yes
+timeCreated: 1506879685
+>>>>>>> origin/ArtistGeneral:RobotsWow/Assets/Resources/Shaders.meta
 licenseType: Free
 DefaultImporter:
   userData: 
