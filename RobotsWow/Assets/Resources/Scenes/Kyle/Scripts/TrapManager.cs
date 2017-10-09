@@ -7,6 +7,9 @@ public class TrapManager : MonoBehaviour
     [SerializeField]
     Trap[] m_traps;
 
+    [SerializeField]
+    GameObject m_trapplayericon;
+
     int m_selectedtrap;
 
 	void Start ()
