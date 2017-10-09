@@ -5,20 +5,45 @@ using UnityEngine;
 public class TrapManager : MonoBehaviour
 {
     [SerializeField]
-    List<GameObject> m_trapgameobjects;
+    Trap[] m_traps;
 
-    List<ITrap> m_traps;
+    int m_selectedtrap;
 
 	void Start ()
     {
-        m_traps = new List<ITrap>();
+        //m_trapgameobjects = GameObject.FindGameObjectsWithTag("Trap");
+        Trap[] traps = GameObject.FindObjectsOfType<Trap>();
+        m_traps = new Trap[traps.Length];
 
-        //m_traps.Add(FindObjectsOfType<ITrap>());
-
-        //foreach(GameObject trap in m_trapgameobjects)
-        //{
-            //m_traps.Add();
-            //???????????????????????????????????????????????
-        //}
+        for(int i = 0; i < traps.Length; i++)
+        {
+            m_traps[traps[i].GetTrapIndex] = traps[i];
+        }
+        
+        m_selectedtrap = 0;
 	}
+
+    void Update()
+    {
+        Debug.Log(m_selectedtrap);
+
+        if (Input.GetKeyDown(KeyCode.RightBracket))
+        {
+            m_selectedtrap += 1;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftBracket))
+        {
+            m_selectedtrap -= 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            m_traps[m_selectedtrap].ActivateTheTrap(true);
+        }
+    }   
+
+    void SelectTrap(int trap)
+    {
+        m_selectedtrap = trap;
+    }
 }

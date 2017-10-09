@@ -6,7 +6,7 @@ public delegate void OnTrapHit();
 
 public class PlayerController : MonoBehaviour
 {
-    public event OnTrapHit TrapHasHitEvent;
+    //public event OnTrapHit TrapHasHitEvent;
 
     [SerializeField]
     Transform m_spawnpoint;
@@ -25,14 +25,18 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Trap")
+        if (other.CompareTag("Trap"))
         {
             Debug.Log("IK BEN GERAAKT!!!");
+            other.gameObject.GetComponentInParent<Trap>().Reset();
 
+            /*
             if (TrapHasHitEvent != null)
             {
                 TrapHasHitEvent();
             }
+            */
+
             Reset();
         }
     }

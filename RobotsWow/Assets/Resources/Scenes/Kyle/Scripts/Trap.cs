@@ -11,6 +11,9 @@ public interface ITrap
 public class Trap : MonoBehaviour
 {
     [SerializeField]
+    int m_trapindex;
+
+    [SerializeField]
     float m_trapendcounter;
     float m_trapresettimer;
     [SerializeField]
@@ -18,9 +21,10 @@ public class Trap : MonoBehaviour
     float m_deactivationtimer;
 
     bool m_trapisactive;
+    bool m_activatetrap;
 
     [SerializeField]
-    KeyCode m_trapactivationkey;
+    List<Collider> m_trapdeathtriggers;
 
     [SerializeField]
     private PlayerController m_player;
@@ -29,11 +33,22 @@ public class Trap : MonoBehaviour
 
     void Start()
     {
-        m_player.TrapHasHitEvent += Reset;
+        foreach(Collider collider in GetComponentsInChildren<Collider>())
+        {
+            m_trapdeathtriggers.Add(collider);
+        }
+
+        foreach (Collider collider in m_trapdeathtriggers)
+        {
+            collider.enabled = false;
+        }
 
         m_animator = GetComponent<Animator>();
 
-        m_animator.SetInteger("State", 0);
+        if (m_animator != null)
+        {
+            m_animator.SetInteger("State", 0);
+        }
 
         m_deactivationtimer = 10;
     }
@@ -45,12 +60,13 @@ public class Trap : MonoBehaviour
 
         if (m_deactivationtimer > m_deactivatetraptimer)
         {
-            if (Input.GetKeyDown(m_trapactivationkey))
+            if(m_activatetrap == true)
             {
                 //timer werkt
                 Activate();
                 m_deactivationtimer = 0;
                 m_trapisactive = true;
+                m_activatetrap = false;
             }
         }
         /*
@@ -72,19 +88,80 @@ public class Trap : MonoBehaviour
     public void Activate()
     {
         //Debug.Log("Time For Change");
-        m_animator.SetInteger("State", 1);
+        switch (m_trapindex)
+        {
+            case 0:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = true;
+                }
+                Debug.Log("PushTrap Activate");
+                m_animator.SetInteger("State", 1);
+                break;
+
+            case 1:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = true;
+                }
+                Debug.Log("Spike Activate");
+                m_animator.SetInteger("State", 1);
+                break;
+        }
     }
 
     public void Idle()
     {
         //Debug.Log("Naaah I will just go back");
-        m_animator.SetInteger("State", 0);
+        switch (m_trapindex)
+        {
+            case 0:
+                m_animator.SetInteger("State", 0);
+                Debug.Log("PushTrap Idle");
+                break;
+
+            case 1:
+                m_animator.SetInteger("State", 0);
+                Debug.Log("Spike Idle");
+                break;
+        }
     }
 
     public void Reset()
     {
         //Debug.Log("Naaah I will just go back");
-        m_animator.SetInteger("State", 2);
+        switch (m_trapindex)
+        {
+            case 0:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = false;
+                }
+                Debug.Log("PushTrap Reset");
+                m_animator.SetInteger("State", 2);
+                break;
+
+            case 1:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = false;
+                }
+                Debug.Log("Spike Reset");
+                m_animator.SetInteger("State", 2);
+                break;
+        }
+    }
+
+    public void ActivateTheTrap(bool activation)
+    {
+        m_activatetrap = activation;
+    }
+
+    public int GetTrapIndex
+    {
+        get
+        {
+            return m_trapindex;
+        }
     }
 }
-
