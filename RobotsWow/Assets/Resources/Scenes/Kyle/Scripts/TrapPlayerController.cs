@@ -39,16 +39,12 @@ public class TrapPlayerController : MonoBehaviour
 
         transform.position = m_activationposition[m_selectedtrap].position;
 
-        switch (m_selectedtrap)
+        if (m_trapmanager.GetAllTraps()[m_selectedtrap].PlayerMayPress())
         {
-            case 0:
-                //m_trapplayericon.transform = 
-                break;
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            m_trapmanager.ActivateTrap(m_selectedtrap);
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                m_trapmanager.ActivateTrap(m_selectedtrap);
+            }
         }
     }
 }

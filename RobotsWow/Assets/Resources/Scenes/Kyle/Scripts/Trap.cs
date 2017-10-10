@@ -6,6 +6,7 @@ public interface ITrap
 {
     void Activate();
     void Reset();
+    void Idle();
 }
 
 public class Trap : MonoBehaviour
@@ -14,14 +15,12 @@ public class Trap : MonoBehaviour
     int m_trapindex;
 
     [SerializeField]
-    float m_trapendcounter;
-    float m_trapresettimer;
-    [SerializeField]
     float m_deactivatetraptimer;
     float m_deactivationtimer;
 
     bool m_trapisactive;
     bool m_activatetrap;
+    bool m_playermayactivatethetrap;
 
     [SerializeField]
     List<Collider> m_trapdeathtriggers;
@@ -35,7 +34,10 @@ public class Trap : MonoBehaviour
     {
         foreach(Collider collider in GetComponentsInChildren<Collider>())
         {
-            m_trapdeathtriggers.Add(collider);
+            if(collider.isTrigger)
+            {
+                m_trapdeathtriggers.Add(collider);
+            }
         }
 
         foreach (Collider collider in m_trapdeathtriggers)
@@ -60,6 +62,8 @@ public class Trap : MonoBehaviour
 
         if (m_deactivationtimer > m_deactivatetraptimer)
         {
+            m_playermayactivatethetrap = true;
+
             if(m_activatetrap == true)
             {
                 //timer werkt
@@ -69,25 +73,35 @@ public class Trap : MonoBehaviour
                 m_activatetrap = false;
             }
         }
-        /*
-        if (m_trapresettimer > m_trapendcounter && m_trapisactive == true)
+        if(m_deactivationtimer < m_deactivatetraptimer)
         {
-            Debug.Log(m_trapresettimer);
-            Reset();
-            m_trapresettimer = 0;
-            m_trapisactive = false;
+            m_playermayactivatethetrap = false;
         }
-        */
-        //if(m_trapisactive == true)
-        //{
-        //    Reset();
-        //    m_trapisactive = false;
-        //}
+    }
+
+    public void Idle()
+    {
+        switch (m_trapindex)
+        {
+            case 0:
+                m_animator.SetInteger("State", 0);
+                Debug.Log("PushTrap Idle");
+                break;
+
+            case 1:
+                m_animator.SetInteger("State", 0);
+                Debug.Log("Spike Idle");
+                break;
+
+            case 2:
+                Debug.Log("Fall Idle");
+                m_animator.SetInteger("State", 0);
+                break;
+        }
     }
 
     public void Activate()
     {
-        //Debug.Log("Time For Change");
         switch (m_trapindex)
         {
             case 0:
@@ -107,29 +121,20 @@ public class Trap : MonoBehaviour
                 Debug.Log("Spike Activate");
                 m_animator.SetInteger("State", 1);
                 break;
-        }
-    }
 
-    public void Idle()
-    {
-        //Debug.Log("Naaah I will just go back");
-        switch (m_trapindex)
-        {
-            case 0:
-                m_animator.SetInteger("State", 0);
-                Debug.Log("PushTrap Idle");
-                break;
-
-            case 1:
-                m_animator.SetInteger("State", 0);
-                Debug.Log("Spike Idle");
+            case 2:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = true;
+                }
+                Debug.Log("Fall Activate");
+                m_animator.SetInteger("State", 1);
                 break;
         }
     }
 
     public void Reset()
     {
-        //Debug.Log("Naaah I will just go back");
         switch (m_trapindex)
         {
             case 0:
@@ -149,12 +154,26 @@ public class Trap : MonoBehaviour
                 Debug.Log("Spike Reset");
                 m_animator.SetInteger("State", 2);
                 break;
+
+            case 2:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = true;
+                }
+                Debug.Log("Fall Reset");
+                m_animator.SetInteger("State", 2);
+                break;
         }
     }
 
     public void ActivateTheTrap(bool activation)
     {
         m_activatetrap = activation;
+    }
+
+    public bool PlayerMayPress()
+    {
+        return m_playermayactivatethetrap;
     }
 
     public int GetTrapIndex

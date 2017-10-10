@@ -12,6 +12,8 @@ public class TrapManager : MonoBehaviour
 
     int m_selectedtrap;
 
+    float m_maxwaittime;
+
 	void Start ()
     {
         //m_trapgameobjects = GameObject.FindGameObjectsWithTag("Trap");
