@@ -26,27 +26,18 @@ public class TrapManager : MonoBehaviour
         m_selectedtrap = 0;
 	}
 
-    void Update()
+    public void ActivateTrap(int trapindex)
     {
-        Debug.Log(m_selectedtrap);
+        m_traps[trapindex].ActivateTheTrap(true);
+    }
 
-        if (Input.GetKeyDown(KeyCode.RightBracket))
-        {
-            m_selectedtrap += 1;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftBracket))
-        {
-            m_selectedtrap -= 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            m_traps[m_selectedtrap].ActivateTheTrap(true);
-        }
-    }   
-
-    void SelectTrap(int trap)
+    public void SelectTrap(int trap)
     {
         m_selectedtrap = trap;
+    }
+
+    public Trap[] GetAllTraps()
+    {
+        return m_traps;
     }
 }
