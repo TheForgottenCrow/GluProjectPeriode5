@@ -10,8 +10,6 @@ public class TrapManager : MonoBehaviour
     [SerializeField]
     GameObject m_trapplayericon;
 
-    int m_selectedtrap;
-
     float m_maxwaittime;
 
 	void Start ()
@@ -24,18 +22,11 @@ public class TrapManager : MonoBehaviour
         {
             m_traps[traps[i].GetTrapIndex] = traps[i];
         }
-        
-        m_selectedtrap = 0;
 	}
 
     public void ActivateTrap(int trapindex)
     {
         m_traps[trapindex].ActivateTheTrap(true);
-    }
-
-    public void SelectTrap(int trap)
-    {
-        m_selectedtrap = trap;
     }
 
     public Trap[] GetAllTraps()
