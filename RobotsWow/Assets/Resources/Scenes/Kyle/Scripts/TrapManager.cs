@@ -40,11 +40,14 @@ public class TrapManager : MonoBehaviour
 
     public int GetPreviousTrap(int startindex)
     {
-        for(int i = startindex - 1; i < m_traps.Length; i--)
+        if (startindex != 0)
         {
-            if(m_traps[i].IsTrapBeingUsed() == false)
+            for (int i = startindex - 1; i < m_traps.Length; i--)
             {
-                return i;
+                if (m_traps[i].IsTrapBeingUsed() == false)
+                {
+                    return i;
+                }
             }
         }
         return startindex;

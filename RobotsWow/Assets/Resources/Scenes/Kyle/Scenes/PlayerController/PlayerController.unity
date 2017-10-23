@@ -541,7 +541,7 @@ Transform:
   - {fileID: 833414428}
   - {fileID: 751163468}
   m_Father: {fileID: 1613334030}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &250595976
 MonoBehaviour:
@@ -1362,7 +1362,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408730, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 149790, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_TagString
@@ -1820,7 +1820,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1613334030}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1201441471
 GameObject:
@@ -1945,7 +1945,7 @@ Transform:
   m_LocalScale: {x: 0.037739243, y: 0.34809658, z: 0.1705964}
   m_Children: []
   m_Father: {fileID: 1613334030}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1309615014
 MonoBehaviour:
@@ -2330,7 +2330,7 @@ Transform:
   m_LocalScale: {x: 0.20524202, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1613334030}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1525617015
 BoxCollider:
@@ -2565,14 +2565,13 @@ Transform:
   - {fileID: 1078552875}
   - {fileID: 219567837}
   - {fileID: 1527443729}
-  - {fileID: 2020435289}
   - {fileID: 1525617014}
   - {fileID: 250595975}
   - {fileID: 1087559160}
   - {fileID: 1981353024}
   - {fileID: 1309615013}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683922679
 GameObject:
@@ -2902,7 +2901,7 @@ Transform:
   m_LocalScale: {x: 0.039454456, y: 0.35272992, z: 0.064974226}
   m_Children: []
   m_Father: {fileID: 1613334030}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1981353025
 SpriteRenderer:
@@ -2977,7 +2976,7 @@ GameObject:
   - component: {fileID: 2020435289}
   - component: {fileID: 2020435290}
   m_Layer: 0
-  m_Name: TrapController
+  m_Name: TrapManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2990,11 +2989,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2020435288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.8601995, y: 17.6, z: -36.392}
+  m_LocalScale: {x: 8.940179, y: 1, z: 5.4287667}
   m_Children: []
-  m_Father: {fileID: 1613334030}
-  m_RootOrder: 8
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2020435290
 MonoBehaviour:
