@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
     KeyCode m_KeyUp, m_KeyDown, m_KeyLeft, m_KeyRight, m_KeyJump;
 
     [SerializeField]
-    float m_WalkSpeed, m_JumpStrength, m_GrafityMultiplyer, m_GrafityMultiplyerSmall;
+    float m_WalkSpeed, m_JumpStrength, m_GrafityMultiplyerHighJump, m_GrafityMultiplyerSmallJump;
 
     Vector3 m_PlayerVelocity;
     e_Direction m_Direction;
@@ -78,18 +78,16 @@ public class Player : MonoBehaviour {
         }
 
 
-        //Jumping
+        //grafity
         {   
-            if (m_Rigidbody.velocity.y < 0)
+            if (m_Rigidbody.velocity.y > 0 )
             {
-                m_PlayerVelocity += Vector3.up * Physics.gravity.y * (m_GrafityMultiplyer - 1) * Time.deltaTime;
+                m_PlayerVelocity += Vector3.up * Physics.gravity.y * (m_GrafityMultiplyerHighJump - 1) * Time.deltaTime;
             }
-            else if (m_Rigidbody.velocity.y > 0 && !Input.GetKeyDown(m_KeyJump))
+            if (m_Rigidbody.velocity.y > 0 && !Input.GetKeyDown(m_KeyJump))
             {
-                m_PlayerVelocity += Vector3.up * Physics.gravity.y * (m_GrafityMultiplyerSmall - 1) * Time.deltaTime;
+                m_PlayerVelocity += Vector3.up * Physics.gravity.y * (m_GrafityMultiplyerSmallJump - 1) * Time.deltaTime;
             }
-
-
         }
         
     }
