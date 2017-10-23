@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public interface ITrap
 {
     void Activate();
     void Reset();
+    void Idle();
 }
+*/
 
 <<<<<<< HEAD
 public class Trap : MonoBehaviour, ITrap
@@ -18,14 +21,14 @@ public class Trap : MonoBehaviour
     int m_trapindex;
 
     [SerializeField]
-    float m_trapendcounter;
-    float m_trapresettimer;
-    [SerializeField]
     float m_deactivatetraptimer;
     float m_deactivationtimer;
 
     bool m_trapisactive;
     bool m_activatetrap;
+    bool m_playermayactivatethetrap;
+
+    bool m_istrapisbeingused;
 
     [SerializeField]
     List<Collider> m_trapdeathtriggers;
@@ -43,7 +46,10 @@ public class Trap : MonoBehaviour
     {
         foreach(Collider collider in GetComponentsInChildren<Collider>())
         {
-            m_trapdeathtriggers.Add(collider);
+            if(collider.isTrigger)
+            {
+                m_trapdeathtriggers.Add(collider);
+            }
         }
 
         foreach (Collider collider in m_trapdeathtriggers)
@@ -64,6 +70,7 @@ public class Trap : MonoBehaviour
     void Update()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         m_trapresettimer = m_trapresettimer + Time.deltaTime;
         m_deactivationtimer = m_deactivationtimer + Time.deltaTime;
 
@@ -73,10 +80,13 @@ public class Trap : MonoBehaviour
             {
 =======
         //m_trapresettimer = m_trapresettimer + Time.deltaTime;
+=======
+>>>>>>> origin/DeveloperGeneral
         m_deactivationtimer = m_deactivationtimer + Time.deltaTime;
 
         if (m_deactivationtimer > m_deactivatetraptimer)
         {
+<<<<<<< HEAD
             if(m_activatetrap == true)
             {
                 //timer werkt
@@ -98,12 +108,61 @@ public class Trap : MonoBehaviour
 =======
         /*
         if (m_trapresettimer > m_trapendcounter && m_trapisactive == true)
-        {
-            Debug.Log(m_trapresettimer);
-            Reset();
-            m_trapresettimer = 0;
-            m_trapisactive = false;
+=======
+            m_playermayactivatethetrap = true;
         }
+
+        if (m_activatetrap == true)
+>>>>>>> origin/DeveloperGeneral
+        {
+            m_deactivationtimer = 0;
+            Activate();
+            m_activatetrap = false;
+        }
+
+        if (m_deactivationtimer < m_deactivatetraptimer)
+        {
+            m_playermayactivatethetrap = false;
+        }
+    }
+
+    public void Idle()
+    {
+        switch (m_trapindex)
+        {
+            case 0:
+                m_animator.SetInteger("State", 0);
+                Debug.Log("PushTrap Idle");
+                break;
+
+            case 1:
+                m_animator.SetInteger("State", 0);
+                Debug.Log("Spike Idle");
+                break;
+
+            case 2:
+                Debug.Log("Fall Idle");
+                m_animator.SetInteger("State", 0);
+                break;
+
+            case 3:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = false;
+                }
+                Debug.Log("Saw Idle");
+                m_animator.SetInteger("State", 0);
+                break;
+             case 4:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = false;
+                }
+                Debug.Log("Squash Idle");
+                m_animator.SetInteger("State", 0);
+                break;
+        }
+<<<<<<< HEAD
         */
         //if(m_trapisactive == true)
         //{
@@ -111,10 +170,13 @@ public class Trap : MonoBehaviour
         //    m_trapisactive = false;
         //}
 >>>>>>> DeveloperGeneral
+=======
+>>>>>>> origin/DeveloperGeneral
     }
 
     public void Activate()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         m_animator.SetInteger("State", 1);
     }
@@ -127,6 +189,8 @@ public class Trap : MonoBehaviour
 }
 =======
         //Debug.Log("Time For Change");
+=======
+>>>>>>> origin/DeveloperGeneral
         switch (m_trapindex)
         {
             case 0:
@@ -146,29 +210,38 @@ public class Trap : MonoBehaviour
                 Debug.Log("Spike Activate");
                 m_animator.SetInteger("State", 1);
                 break;
-        }
-    }
 
-    public void Idle()
-    {
-        //Debug.Log("Naaah I will just go back");
-        switch (m_trapindex)
-        {
-            case 0:
-                m_animator.SetInteger("State", 0);
-                Debug.Log("PushTrap Idle");
+            case 2:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = true;
+                }
+                Debug.Log("Fall Activate");
+                m_animator.SetInteger("State", 1);
                 break;
 
-            case 1:
-                m_animator.SetInteger("State", 0);
-                Debug.Log("Spike Idle");
+            case 3:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = true;
+                }
+                Debug.Log("Saw Activate");
+                m_animator.SetInteger("State", 1);
+                break;
+
+            case 4:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = true;
+                }
+                Debug.Log("Squash Activate");
+                m_animator.SetInteger("State", 1);
                 break;
         }
     }
 
     public void Reset()
     {
-        //Debug.Log("Naaah I will just go back");
         switch (m_trapindex)
         {
             case 0:
@@ -188,6 +261,29 @@ public class Trap : MonoBehaviour
                 Debug.Log("Spike Reset");
                 m_animator.SetInteger("State", 2);
                 break;
+
+            case 2:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = false;
+                }
+                Debug.Log("Fall Reset");
+                m_animator.SetInteger("State", 2);
+                break;
+
+            case 3:
+                Debug.Log("Saw Reset");
+                m_animator.SetInteger("State", 2);
+                break;
+
+            case 4:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = false;
+                }
+                Debug.Log("Squash Reset");
+                m_animator.SetInteger("State", 2);
+                break;
         }
     }
 
@@ -199,6 +295,11 @@ public class Trap : MonoBehaviour
         m_activatetrap = activation;
     }
 
+    public bool PlayerMayPress()
+    {
+        return m_playermayactivatethetrap;
+    }
+
     public int GetTrapIndex
     {
         get
@@ -206,5 +307,19 @@ public class Trap : MonoBehaviour
             return m_trapindex;
         }
     }
+<<<<<<< HEAD
 }
 >>>>>>> DeveloperGeneral
+=======
+
+    public void UseThisTrap(bool isusing)
+    {
+        m_istrapisbeingused = isusing;
+    }
+
+    public bool IsTrapBeingUsed()
+    {
+        return m_istrapisbeingused;
+    }
+}
+>>>>>>> origin/DeveloperGeneral

@@ -4,6 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - Player1
+=======
+>>>>>>> KyleVanDenBoom
+  - Trap
+=======
+>>>>>>> origin/DeveloperGeneral
   - DmgObject
   - Trap
   layers:
