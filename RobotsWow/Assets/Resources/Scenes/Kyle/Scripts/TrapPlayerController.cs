@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TrapPlayerController : MonoBehaviour
 {
     int m_selectedtrap;
+    int m_lasttrap;
+    int m_nexttrap;
 
     [SerializeField]
     int m_trapplayerindex;
@@ -35,43 +38,40 @@ public class TrapPlayerController : MonoBehaviour
 
         Debug.Log(m_trapplayerindex);
         m_theghosts[m_trapplayerindex].m_selectedtrap = m_trapplayerindex;
+        m_trapmanager.GetTrap(m_selectedtrap).UseThisTrap(true);
     }
 	
 	void Update ()
     {
-        Debug.Log(m_selectedtrap);
-
         if (Input.GetKeyDown(player_nexttrapkey))
         {
-            if (m_selectedtrap != m_trapmanager.GetAllTraps().Length - 1)
+            int newtrapindex = m_trapmanager.GetNextTrap(m_selectedtrap);
+
+            if(newtrapindex != m_selectedtrap)
             {
-                if (m_trapmanager.GetAllTraps()[m_selectedtrap].IsTrapBeingUsed() == false)
-                {
-                    m_selectedtrap += 1;
-                }
-                else
-                {
-                    foreach (Trap trap in m_trapmanager.GetAllTraps())
-                    {
-                        if(trap.IsTrapBeingUsed() == false)
-                        {
-                            //m_trapmanager
-                        }
-                    }
-                }
+                m_trapmanager.GetTrap(m_selectedtrap).UseThisTrap(false);
+                m_trapmanager.GetTrap(newtrapindex).UseThisTrap(true);
+
+                m_selectedtrap = newtrapindex;
             }
         }
+
         if (Input.GetKeyDown(player_previoustrapkey))
         {
-            if (m_selectedtrap != 0)
+            int newtrapindex = m_trapmanager.GetPreviousTrap(m_selectedtrap);
+
+            if(newtrapindex != m_selectedtrap)
             {
-                m_selectedtrap -= 1;
+                m_trapmanager.GetTrap(m_selectedtrap).UseThisTrap(false);
+                m_trapmanager.GetTrap(newtrapindex).UseThisTrap(true);
+
+                m_selectedtrap = newtrapindex;
             }
         }
 
         transform.position = m_activationposition[m_selectedtrap].position;
 
-        if (m_trapmanager.GetAllTraps()[m_selectedtrap].PlayerMayPress())
+        if (m_trapmanager.GetTrap(m_selectedtrap).PlayerMayPress())
         {
             if (Input.GetKeyDown(player_activatetrapkey))
             {

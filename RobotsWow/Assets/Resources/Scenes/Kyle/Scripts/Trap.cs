@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public interface ITrap
 {
     void Activate();
     void Reset();
     void Idle();
 }
+*/
 
 public class Trap : MonoBehaviour
 {
