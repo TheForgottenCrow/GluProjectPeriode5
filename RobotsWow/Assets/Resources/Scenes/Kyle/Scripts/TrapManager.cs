@@ -7,7 +7,7 @@ public class TrapManager : MonoBehaviour
     [SerializeField]
     Trap[] m_traps;
 
-    int m_selectedtrap;
+    float m_maxwaittime;
 
 	void Start ()
     {
@@ -19,31 +19,46 @@ public class TrapManager : MonoBehaviour
         {
             m_traps[traps[i].GetTrapIndex] = traps[i];
         }
-        
-        m_selectedtrap = 0;
 	}
 
-    void Update()
+    public void ActivateTrap(int trapindex)
     {
-        Debug.Log(m_selectedtrap);
+        m_traps[trapindex].ActivateTheTrap(true);
+    }
 
-        if (Input.GetKeyDown(KeyCode.RightBracket))
-        {
-            m_selectedtrap += 1;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftBracket))
-        {
-            m_selectedtrap -= 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            m_traps[m_selectedtrap].ActivateTheTrap(true);
-        }
-    }   
-
-    void SelectTrap(int trap)
+    public int GetNextTrap(int startindex)
     {
-        m_selectedtrap = trap;
+        for(int i = startindex + 1; i < m_traps.Length; i++)
+        {
+            if(m_traps[i].IsTrapBeingUsed() == false)
+            {
+                return i;
+            }
+        }
+        return startindex;
+    }
+
+    public int GetPreviousTrap(int startindex)
+    {
+        if (startindex != 0)
+        {
+            for (int i = startindex - 1; i < m_traps.Length; i--)
+            {
+                if (m_traps[i].IsTrapBeingUsed() == false)
+                {
+                    return i;
+                }
+            }
+        }
+        return startindex;
+    }
+
+    public Trap GetTrap(int trapindex)
+    {
+        if(trapindex < 0 || trapindex >= m_traps.Length)
+        {
+            return null;
+        }
+        return m_traps[trapindex];
     }
 }

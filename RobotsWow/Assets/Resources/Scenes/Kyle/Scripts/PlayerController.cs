@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
         //TrapHasHitEvent += Reset;
     }
 
-    void Reset()
+    public void Reset()
     {
         transform.position = m_spawnpoint.position;
     }
@@ -29,13 +29,6 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("IK BEN GERAAKT!!!");
             other.gameObject.GetComponentInParent<Trap>().Reset();
-
-            /*
-            if (TrapHasHitEvent != null)
-            {
-                TrapHasHitEvent();
-            }
-            */
 
             Reset();
         }
