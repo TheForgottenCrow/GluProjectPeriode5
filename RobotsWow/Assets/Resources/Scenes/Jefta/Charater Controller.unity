@@ -224,9 +224,9 @@ MonoBehaviour:
   m_KeyRight: 100
   m_KeyJump: 32
   m_WalkSpeed: 400
-  m_JumpStrength: 20
-  m_GrafityMultiplyerHighJump: 4
-  m_GrafityMultiplyerSmallJump: 2
+  m_JumpStrength: 15
+  m_NormalGravityMultiplyer: 2
+  m_HeavyGrafityMultiplyer: 5
 --- !u!1 &613675064
 GameObject:
   m_ObjectHideFlags: 0
