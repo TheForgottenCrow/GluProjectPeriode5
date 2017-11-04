@@ -29,20 +29,21 @@ public class TrapPlayerController : MonoBehaviour
     void Awake()
     {
         m_selectedtrap = 0;
+
+        m_theghosts = GameObject.FindObjectsOfType<TrapPlayerController>();
+        m_trapmanager = GameObject.FindObjectOfType<TrapManager>();
     }
 
     void Start ()
     {
-        m_theghosts = GameObject.FindObjectsOfType<TrapPlayerController>();
-        m_trapmanager = GameObject.FindObjectOfType<TrapManager>();
-
-        Debug.Log(m_trapplayerindex);
         m_theghosts[m_trapplayerindex].m_selectedtrap = m_trapplayerindex;
-        m_trapmanager.GetTrap(m_selectedtrap).UseThisTrap(true);
+
     }
 	
 	void Update ()
     {
+        m_trapmanager.GetTrap(m_selectedtrap).UseThisTrap(true);
+
         if (Input.GetKeyDown(player_nexttrapkey))
         {
             int newtrapindex = m_trapmanager.GetNextTrap(m_selectedtrap);
