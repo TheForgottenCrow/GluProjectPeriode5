@@ -30,7 +30,7 @@ public class Trap : MonoBehaviour
     List<Collider> m_trapdeathtriggers;
 
     [SerializeField]
-    private PlayerController m_player;
+    private Player m_player;
 
     Animator m_animator;
  
