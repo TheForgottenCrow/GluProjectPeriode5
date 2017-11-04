@@ -3,19 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - Player1
-=======
->>>>>>> KyleVanDenBoom
-  - Trap
-=======
->>>>>>> origin/DeveloperGeneral
-  - DmgObject
-  - Trap
+  tags: []
   layers:
   - Default
   - TransparentFX
