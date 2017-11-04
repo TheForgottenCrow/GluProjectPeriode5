@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4dfba52caa55634478f9e8d347174420
+timeCreated: 1509356457
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DK Blackminster
+  fontNames:
+  - DK Blackminster
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
