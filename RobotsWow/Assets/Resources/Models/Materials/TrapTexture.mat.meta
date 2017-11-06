@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: aaa74b5573399c94fa46947e38841625
 timeCreated: 1509953652
 licenseType: Pro
+=======
+guid: 6fffac1a4718f2e4689c097ff3e57d66
+timeCreated: 1509955311
+licenseType: Free
+>>>>>>> origin/RickvanAsselt
 NativeFormatImporter:
   mainObjectFileID: 2100000
   userData: 
