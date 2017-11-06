@@ -2,6 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:RobotsWow/Assets/Resources/Scripts/Jefta/Player.cs
+public class Player : MonoBehaviour {
+
+    [SerializeField]
+<<<<<<< HEAD
+    private float m_JumpStrength, m_JumpTime, m_MoveSpeed;
+    
+	
+	void Start ()
+=======
+    KeyCode m_KeyUp, m_KeyDown, m_KeyLeft, m_KeyRight, m_KeyJump;
+
+    [SerializeField]
+    float m_WalkSpeed, m_JumpStrength, m_NormalGravityMultiplyer, m_HeavyGrafityMultiplyer;
+
+    Vector3 m_PlayerVelocity;
+    e_Direction m_Direction;
+    Rigidbody m_Rigidbody;
+
+    void Start ()
+>>>>>>> DeveloperGeneral
+=======
+>>>>>>> master
 enum EPlayerState
 {
     Idle = 0,
@@ -35,6 +60,10 @@ public class PlayerVoorKipje : MonoBehaviour
 
 
     private void Awake()
+<<<<<<< HEAD
+=======
+>>>>>>> DeveloperGeneral:RobotsWow/Assets/Resources/Scripts/Jefta/PlayerVoorKipje.cs
+>>>>>>> master
     {
         m_RB = GetComponent<Rigidbody>();
         m_Col = GetComponent<CapsuleCollider>();
