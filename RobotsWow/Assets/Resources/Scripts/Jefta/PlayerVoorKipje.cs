@@ -10,7 +10,7 @@ enum EPlayerState
 }
 
 
-public class Player : MonoBehaviour
+public class PlayerVoorKipje : MonoBehaviour
 {
     [Header("Physics"), Space()]
     [SerializeField] private float m_JumpStrength;
