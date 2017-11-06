@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
 	
 	void Update ()
     {
-        m_target_position = new Vector3(m_followtarget.transform.position.x, transform.position.y, transform.position.z);
+        m_target_position = new Vector3(transform.position.x, transform.position.y, m_followtarget.transform.position.z);
         transform.position = Vector3.Lerp(transform.position, m_target_position, m_followspeed * Time.deltaTime);
 	}
 }

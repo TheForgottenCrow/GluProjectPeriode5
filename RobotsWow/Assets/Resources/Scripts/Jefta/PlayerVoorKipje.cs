@@ -6,10 +6,12 @@ enum EPlayerState
 {
     Idle = 0,
     Runnig
-
 }
 
+<<<<<<< HEAD:RobotsWow/Assets/Resources/Scripts/Jefta/PlayerVoorKipje.cs
 
+=======
+>>>>>>> KyleVanDenBoom:RobotsWow/Assets/Resources/Scripts/Jefta/PlayerVoorKipje.cs
 public class PlayerVoorKipje : MonoBehaviour
 {
     [Header("Physics"), Space()]
