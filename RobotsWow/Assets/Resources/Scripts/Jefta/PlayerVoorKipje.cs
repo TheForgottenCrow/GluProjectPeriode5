@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 <<<<<<< HEAD:RobotsWow/Assets/Resources/Scripts/Jefta/Player.cs
 public class Player : MonoBehaviour {
 
@@ -24,14 +25,18 @@ public class Player : MonoBehaviour {
     void Start ()
 >>>>>>> DeveloperGeneral
 =======
+=======
+>>>>>>> DeveloperGeneral
 enum EPlayerState
 {
     Idle = 0,
     Runnig
-
 }
 
+<<<<<<< HEAD:RobotsWow/Assets/Resources/Scripts/Jefta/PlayerVoorKipje.cs
 
+=======
+>>>>>>> KyleVanDenBoom:RobotsWow/Assets/Resources/Scripts/Jefta/PlayerVoorKipje.cs
 public class PlayerVoorKipje : MonoBehaviour
 {
     [Header("Physics"), Space()]
@@ -57,57 +62,75 @@ public class PlayerVoorKipje : MonoBehaviour
 
 
     private void Awake()
->>>>>>> DeveloperGeneral:RobotsWow/Assets/Resources/Scripts/Jefta/PlayerVoorKipje.cs
-    {
-		
-	}
-	
-	
-	void Update ()
-    {
-        m_JumpTime += Time.deltaTime;
-
-        
-
-        if (m_JumpTime < 1.5f)
-        {
-            gameObject.transform.position += Vector3.up * m_JumpStrength * Time.deltaTime;
-        }
-
-        //Temp input
-        if (Input.GetKey(KeyCode.Space))
-        {
-            m_JumpTime = 0f;
-            
-        }
 <<<<<<< HEAD
-	}
+>>>>>>> DeveloperGeneral:RobotsWow/Assets/Resources/Scripts/Jefta/PlayerVoorKipje.cs
 =======
+>>>>>>> DeveloperGeneral
+    {
+        m_RB = GetComponent<Rigidbody>();
+        m_Col = GetComponent<CapsuleCollider>();
+        m_Animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        //Animator
+        if (Input.GetAxis("Horizontal") == 0 || Input.GetAxis("Vertical") == 0)
+        { 
+            m_Animator.SetInteger("State", (int)EPlayerState.Idle);
+        }
+        if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && IsGrounded())
+        {
+            m_Animator.SetInteger("State", (int)EPlayerState.Runnig);
+        }
 
        
-        //grafity
-        {   
-            if (m_Rigidbody.velocity.y != 0)
-            {
-                m_PlayerVelocity += Vector3.up * Physics.gravity.y * (m_NormalGravityMultiplyer) * Time.deltaTime;
-            }
-            if (m_Rigidbody.velocity.y > 0 && Input.GetKey(m_KeyJump))
-            {
-                m_PlayerVelocity += Vector3.up * Physics.gravity.y * (m_NormalGravityMultiplyer) * Time.deltaTime;
-            }
-            if (m_Rigidbody.velocity.y > 0 && !Input.GetKey(m_KeyJump))
-            {
-                m_PlayerVelocity += Vector3.up * Physics.gravity.y * (m_HeavyGrafityMultiplyer) * Time.deltaTime;
-            }
+
+        //Horizontal and Verticle movement
+
+        m_XVelocity = Input.GetAxis("Horizontal") * m_MoveSpeed;
+        m_ZVelocity = Input.GetAxis("Vertical") * m_MoveSpeed;
+
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            m_RB.velocity += Vector3.up * m_JumpStrength;
+        }
+
+    }
+
+
+    private void LateUpdate()
+    {
+        //Update RidgidBody
+        Vector3 v3 = m_RB.velocity;
+        v3.x = m_XVelocity;
+        v3.z = m_ZVelocity;
+
+        if (m_RB.velocity.y <= 0)
+        {
+            v3 += Vector3.up * Physics.gravity.y * (m_FallGravity - 1) * Time.deltaTime;
+        }
+        else if (m_RB.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            v3 += Vector3.up * Physics.gravity.y * (m_LowJumpGravity - 1) * Time.deltaTime;
+        }
+
+        d_Velocity = m_RB.velocity = v3;
+
+        //Turn Arround
+        
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            transform.rotation = Quaternion.LookRotation(new Vector3(v3.x, 0, v3.z));
+            transform.Rotate(Vector3.up, 90);
         }
         
     }
 
-    private void FixedUpdate()
+    public bool IsGrounded()
     {
-        // Apply Velocity
-        m_Rigidbody.velocity = m_PlayerVelocity;
+        return (Physics.CheckCapsule(m_Col.bounds.center, new Vector3(m_Col.bounds.center.x, m_Col.bounds.min.y, m_Col.bounds.center.z), m_Col.radius * 0.9f, m_GroundLayer)) ; 
     }
 
->>>>>>> DeveloperGeneral
 }
+    

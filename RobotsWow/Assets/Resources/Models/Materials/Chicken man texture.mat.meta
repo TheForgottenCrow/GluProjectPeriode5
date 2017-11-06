@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 9dbec8309b567984eb7fa222cc8016ba
 <<<<<<< HEAD
 timeCreated: 1509823840
@@ -6,6 +7,11 @@ timeCreated: 1509823840
 timeCreated: 1509953652
 >>>>>>> ArtistGeneral
 licenseType: Pro
+=======
+guid: e6b982870e465154bac9eb0b9236ebe0
+timeCreated: 1509353934
+licenseType: Free
+>>>>>>> DeveloperGeneral
 NativeFormatImporter:
   mainObjectFileID: 2100000
   userData: 
