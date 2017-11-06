@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD:RobotsWow/Assets/Resources/Scripts/Jefta/Player.cs
 public class Player : MonoBehaviour {
 
     [SerializeField]
@@ -22,6 +23,41 @@ public class Player : MonoBehaviour {
 
     void Start ()
 >>>>>>> DeveloperGeneral
+=======
+enum EPlayerState
+{
+    Idle = 0,
+    Runnig
+
+}
+
+
+public class PlayerVoorKipje : MonoBehaviour
+{
+    [Header("Physics"), Space()]
+    [SerializeField] private float m_JumpStrength;
+    [SerializeField] private float m_MoveSpeed;
+    [SerializeField] private float m_FallGravity;
+    [SerializeField] private float m_LowJumpGravity;
+    [SerializeField] private LayerMask m_GroundLayer;
+
+    private float m_XVelocity;
+    private float m_ZVelocity;
+
+    private Vector3 m_DirectionMem;
+
+
+    private Rigidbody m_RB;
+    private CapsuleCollider m_Col;
+    private Animator m_Animator;
+
+    [Space()]
+    [SerializeField, Header("Debug")]
+    private Vector3 d_Velocity;
+
+
+    private void Awake()
+>>>>>>> DeveloperGeneral:RobotsWow/Assets/Resources/Scripts/Jefta/PlayerVoorKipje.cs
     {
 		
 	}
