@@ -649,6 +649,17 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114646725183488614, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
+        type: 2}
+      propertyPath: m_Text
+      value: Rick van Asselt  *  Kyle van den Boom  *  Jefta Brink  *  Job Hazendonk  *  Remy
+        Gerritsen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114646725183488614, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52ab4ff0e9f15a64e993c5fa1c91303c, type: 2}
   m_IsPrefabParent: 0
@@ -856,15 +867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bedf3ffa248cab448fdf889fb36233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplashScreen: {fileID: 2136475421}
-  MainMenu: {fileID: 1153113225}
-  Settings: {fileID: 410826539}
-  BackgroundFade: {fileID: 1506438902}
-  Pauze: {fileID: 621312988}
-  Ingame: {fileID: 1150127551}
-  EndScreen: {fileID: 894709304}
-  Arnoud: {fileID: 0}
-  Schermpies: 0
 --- !u!224 &1399183441
 RectTransform:
   m_ObjectHideFlags: 0
