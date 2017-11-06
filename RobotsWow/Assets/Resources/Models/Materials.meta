@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: aeccae011a51fb242a6d258de2f405c1
 folderAsset: yes
 <<<<<<< HEAD
@@ -7,6 +8,12 @@ timeCreated: 1509823840
 timeCreated: 1509953650
 >>>>>>> ArtistGeneral
 licenseType: Pro
+=======
+guid: 7388c82b0c1e18a4d88b09c0868beebe
+folderAsset: yes
+timeCreated: 1509955311
+licenseType: Free
+>>>>>>> origin/RickvanAsselt
 DefaultImporter:
   userData: 
   assetBundleName: 
