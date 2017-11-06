@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 guid: 6d60821f60595c842b79f76bbc271db2
+<<<<<<< HEAD
 timeCreated: 1509823840
+=======
+timeCreated: 1509953650
+>>>>>>> ArtistGeneral
 licenseType: Pro
 NativeFormatImporter:
   mainObjectFileID: 2100000

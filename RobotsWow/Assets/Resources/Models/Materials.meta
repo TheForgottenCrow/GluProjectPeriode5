@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: aeccae011a51fb242a6d258de2f405c1
 folderAsset: yes
+<<<<<<< HEAD
 timeCreated: 1509823840
+=======
+timeCreated: 1509953650
+>>>>>>> ArtistGeneral
 licenseType: Pro
 DefaultImporter:
   userData: 
