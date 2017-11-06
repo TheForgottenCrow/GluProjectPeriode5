@@ -284,7 +284,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114645985338955496, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -314,7 +314,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114583917902046186, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -339,7 +339,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114992570872015456, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -364,7 +364,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114389758168396608, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -389,7 +389,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114448365646107164, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -414,7 +414,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114408167174871826, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -439,7 +439,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114045889689562018, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -464,7 +464,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114667088042559092, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -489,7 +489,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114243652686972254, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -523,7 +523,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114356834593183466, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -548,7 +548,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114161962173616502, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -573,7 +573,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114351069488797588, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -588,7 +588,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114096605947820472, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -623,7 +623,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114813162436692400, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -638,7 +638,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1399183442}
+      objectReference: {fileID: 0}
     - target: {fileID: 114819656371401932, guid: 52ab4ff0e9f15a64e993c5fa1c91303c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -882,7 +882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 967.7, y: 109.399994}
+  m_AnchoredPosition: {x: 1000, y: 500}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1399183442
