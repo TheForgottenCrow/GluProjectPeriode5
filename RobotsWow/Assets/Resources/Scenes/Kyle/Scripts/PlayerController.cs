@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Reset()
-    {
+    {   
         transform.position = m_spawnpoint.position;
     }
 

@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        m_followtarget = GameObject.FindObjectOfType<PlayerController>().gameObject;
     }
 	
 	void Update ()

@@ -86,34 +86,30 @@ public class Trap : MonoBehaviour
         switch (m_trapindex)
         {
             case 0:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = false;
+                }
                 m_animator.SetInteger("State", 0);
-                Debug.Log("PushTrap Idle");
                 break;
 
             case 1:
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = false;
+                }
                 m_animator.SetInteger("State", 0);
-                Debug.Log("Spike Idle");
                 break;
 
             case 2:
-                Debug.Log("Fall Idle");
+                foreach (Collider dtrigger in m_trapdeathtriggers)
+                {
+                    dtrigger.enabled = false;
+                }
                 m_animator.SetInteger("State", 0);
                 break;
 
             case 3:
-                foreach (Collider dtrigger in m_trapdeathtriggers)
-                {
-                    dtrigger.enabled = false;
-                }
-                Debug.Log("Saw Idle");
-                m_animator.SetInteger("State", 0);
-                break;
-             case 4:
-                foreach (Collider dtrigger in m_trapdeathtriggers)
-                {
-                    dtrigger.enabled = false;
-                }
-                Debug.Log("Squash Idle");
                 m_animator.SetInteger("State", 0);
                 break;
         }
@@ -128,7 +124,6 @@ public class Trap : MonoBehaviour
                 {
                     dtrigger.enabled = true;
                 }
-                Debug.Log("PushTrap Activate");
                 m_animator.SetInteger("State", 1);
                 break;
 
@@ -137,7 +132,6 @@ public class Trap : MonoBehaviour
                 {
                     dtrigger.enabled = true;
                 }
-                Debug.Log("Spike Activate");
                 m_animator.SetInteger("State", 1);
                 break;
 
@@ -146,7 +140,6 @@ public class Trap : MonoBehaviour
                 {
                     dtrigger.enabled = true;
                 }
-                Debug.Log("Fall Activate");
                 m_animator.SetInteger("State", 1);
                 break;
 
@@ -155,16 +148,6 @@ public class Trap : MonoBehaviour
                 {
                     dtrigger.enabled = true;
                 }
-                Debug.Log("Saw Activate");
-                m_animator.SetInteger("State", 1);
-                break;
-
-            case 4:
-                foreach (Collider dtrigger in m_trapdeathtriggers)
-                {
-                    dtrigger.enabled = true;
-                }
-                Debug.Log("Squash Activate");
                 m_animator.SetInteger("State", 1);
                 break;
         }
@@ -175,43 +158,22 @@ public class Trap : MonoBehaviour
         switch (m_trapindex)
         {
             case 0:
-                foreach (Collider dtrigger in m_trapdeathtriggers)
-                {
-                    dtrigger.enabled = false;
-                }
-                Debug.Log("PushTrap Reset");
                 m_animator.SetInteger("State", 2);
                 break;
 
             case 1:
-                foreach (Collider dtrigger in m_trapdeathtriggers)
-                {
-                    dtrigger.enabled = false;
-                }
-                Debug.Log("Spike Reset");
                 m_animator.SetInteger("State", 2);
                 break;
 
             case 2:
-                foreach (Collider dtrigger in m_trapdeathtriggers)
-                {
-                    dtrigger.enabled = false;
-                }
-                Debug.Log("Fall Reset");
                 m_animator.SetInteger("State", 2);
                 break;
 
             case 3:
-                Debug.Log("Saw Reset");
-                m_animator.SetInteger("State", 2);
-                break;
-
-            case 4:
                 foreach (Collider dtrigger in m_trapdeathtriggers)
                 {
                     dtrigger.enabled = false;
                 }
-                Debug.Log("Squash Reset");
                 m_animator.SetInteger("State", 2);
                 break;
         }

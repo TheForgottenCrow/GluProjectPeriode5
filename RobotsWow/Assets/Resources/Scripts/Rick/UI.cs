@@ -36,6 +36,11 @@ public class UI : MonoBehaviour
                 Cases();
             }
         }
+        if (Schermpies == 5)
+        {
+            Cases();
+        }
+
     }
 
     void Cases()
@@ -89,20 +94,28 @@ public class UI : MonoBehaviour
 
     IEnumerator Numerator2()
     {
-
         yield return new WaitForSeconds(30f);
         Schermpies = 4;
         Cases();
-        SceneManager.UnloadSceneAsync("Ricky");
-
     }
     //MainMenu Button
     public void MainMenuB()
     {
-        BackgroundFade.SetActive(true);
-        Arnoud.SetTrigger("Screenswitch");
-        StartCoroutine(Numerator1());
-        StartCoroutine(Numerator3());
+        if(SceneManager.GetSceneByName("RickyRick").IsValid())
+        {
+            DeleteScene("RickyRick");
+            BackgroundFade.SetActive(true);
+            Arnoud.SetTrigger("Screenswitch");
+            StartCoroutine(Numerator1());
+            StartCoroutine(Numerator3());
+        }
+        else
+        {
+            BackgroundFade.SetActive(true);
+            Arnoud.SetTrigger("Screenswitch");
+            StartCoroutine(Numerator1());
+            StartCoroutine(Numerator3());
+        }
     }
 
     //Timer
@@ -137,7 +150,7 @@ public class UI : MonoBehaviour
     // start button
     public void StartB()
     {
-        SceneManager.LoadScene("Ricky", LoadSceneMode.Additive);
+        SceneManager.LoadScene("RickyRick", LoadSceneMode.Additive);
         StartCoroutine(Numerator2());
         Schermpies = 4;
         Cases();
@@ -146,8 +159,8 @@ public class UI : MonoBehaviour
     // retry button
     public void RetryB()
     {
-        SceneManager.UnloadSceneAsync("Ricky");
-        SceneManager.LoadScene("Ricky", LoadSceneMode.Additive);
+        DeleteScene("RickyRick");
+        ReloadScene("RickyRick");
         StartCoroutine(Numerator2());
         Schermpies = 4;
         Cases();
@@ -158,6 +171,28 @@ public class UI : MonoBehaviour
     {
         Application.Quit();
 
+    }
+
+    //Back Button
+    public void BackB()
+    {
+        Schermpies = 4;
+        Cases();
+    }
+
+    public void SetSchrempies(int scherm)
+    {
+        Schermpies = scherm;
+    }
+
+    public void DeleteScene(string scene)
+    {
+        SceneManager.UnloadSceneAsync(scene);
+    }
+
+    public void ReloadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }
 

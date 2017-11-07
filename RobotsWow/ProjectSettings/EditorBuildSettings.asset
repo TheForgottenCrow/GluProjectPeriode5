@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Resources/Scenes/Rick/UI.unity
+    guid: afb7d61c92b3e48469cef66d1a72e29a
+  - enabled: 1
+    path: Assets/Resources/Scenes/Kyle/Scenes/RicksScene/RickyRick.unity
+    guid: c619ba852e5f3084fa18257616476b43

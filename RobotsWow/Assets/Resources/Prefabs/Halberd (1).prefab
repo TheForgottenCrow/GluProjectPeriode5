@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23167264049341182}
   - component: {fileID: 95560660063135806}
   m_Layer: 0
-  m_Name: Halberd
+  m_Name: Halberd (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
